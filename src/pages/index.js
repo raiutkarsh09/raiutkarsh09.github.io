@@ -1,14 +1,29 @@
 import React from "react"
-import { Link } from "gatsby"
 //scss
 import "../styles/styles.scss"
-// Normalize is optional up to you
-import "normalize.css"
+//import Components
+import { Link, graphql } from "gatsby"
+
+import Header from "../components/header"
+import Banner from "../components/banner"
+import About from "../components/about"
+import Contact from "../components/contact"
+import SEO from "../components/seo"
+
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
+
+
 
 const IndexPage = () => (
   <div>
-    <h1>Hi from the home page</h1>
-    <Link to="/page-2">Go to page 2</Link>
+    <SEO title="Home" />
+    <Header />
+    <Banner />
+    <About />
+    <Contact />
   </div>
 )
 
